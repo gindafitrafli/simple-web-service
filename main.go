@@ -5,11 +5,18 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
+	controller "github.com/gindafitrafli/go/simple-web-service/api/muxnethttp"
 	// "time"
 )
 func main() {
 	fmt.Println("hello world")
+	//using mux and pure net/http
+
 	r := mux.NewRouter()
-	// Bind to a port and pass our router in
+	r.HandleFunc("/outlet", controller.CreateOutlet).Methods("POST")
 	log.Fatal(http.ListenAndServe(":8000", r))
+
+
+
+	//using gin
 }
