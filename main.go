@@ -16,7 +16,6 @@ func main() {
 	r.HandleFunc("/outlet", controller.CreateOutlet).Methods("POST")
 	log.Fatal(http.ListenAndServe(":8000", r))
 
-
-
 	//using gin
+	
 }
